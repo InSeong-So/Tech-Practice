@@ -2,7 +2,10 @@
   "name": "@practice/workspace",
   "private": true,
   "scripts": {
-    "compile": "tsc -b tsconfig.build.json"
+    "dev:react": "npm run dev --workspace=@practice/react-vite",
+    "dev:vanilla": "npm run dev --workspace=@practice/vanilla-vite",
+    "dev:vue": "npm run dev --workspace=@practice/vue-vite",
+    "build": "npm run build --workspace=@practice/utils"
   },
   "devDependencies": {
     "lerna": "5.1.2",
