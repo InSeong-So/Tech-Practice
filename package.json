@@ -3,7 +3,7 @@
   "private": true,
   "scripts": {
     "dev:react": "npm run dev --workspace=@practice/react-vite",
-    "dev:vanilla": "lerna run --scope '{@practice/server,@practice/vanilla-vite}' dev --stream --no-bail",
+    "dev:vanilla": "lerna run --scope '{@practice/server,@practice/vanilla-vite}' dev --stream",
     "dev:vue": "npm run dev --workspace=@practice/vue-vite",
     "build": "npm run build --workspace=@practice/utils"
   },
