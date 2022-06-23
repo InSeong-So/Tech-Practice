@@ -1,29 +1,12 @@
+import { Controller, Get } from '@nestjs/common';
 import { AppService } from './app.service';
-import { Body, Delete, Get, Param, Post } from '@nestjs/common';
 
-export class AppController<T> {
-  constructor(private readonly appService: AppService<T>) {
-    this.appService = appService;
-  }
+@Controller()
+export class AppController {
+  constructor(private readonly appService: AppService) {}
 
   @Get()
-  async list(): Promise<Array<T>> {
-    return this.appService.list();
-  }
-
-  @Get(':id')
-  async detail(@Param('id') _id: string): Promise<T> {
-    return this.appService.detail(_id);
-  }
-
-  @Post()
-  async save(@Body() data: T): Promise<T> {
-    console.log(data);
-    return this.appService.save(data);
-  }
-
-  @Delete(':id')
-  async delete(@Param('id') id: string): Promise<number> {
-    return this.appService.delete(id);
+  getHello(): string {
+    return this.appService.getHello();
   }
 }
